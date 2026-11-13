@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Press F5: starts the server and opens the app in your browser automatically.
+            "name": "Run Pronto (server + browser)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/server.js",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "serverReadyAction": {
+                "pattern": "Pronto running at (https?://\\S+)",
+                "uriFormat": "%s",
+                "action": "openExternally"
+            }
+        },
+        {
+            // Optional: debug the front-end JavaScript in Chrome (start the server first).
+            "name": "Debug front-end in Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/public"
+        }
+    ]
+}

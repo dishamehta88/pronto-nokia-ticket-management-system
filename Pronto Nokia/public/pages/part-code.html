@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part Code</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/pages/pages.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div class="page-container">
+
+    <div class="page-card">
+        <h2>Add Part Code</h2>
+        <form id="addForm" class="inline-form">
+            <input type="text" id="partCode" placeholder="Part Code (e.g. PC1004)" required>
+            <input type="text" id="unitName" placeholder="Unit Name">
+            <input type="text" id="partGroup" placeholder="Part Group">
+            <input type="text" id="partFamily" placeholder="Part Family">
+            <button type="submit" class="btn">Add</button>
+        </form>
+        <p id="statusMessage"></p>
+    </div>
+
+    <div class="page-card">
+        <h2>All Part Codes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Part Code</th>
+                    <th>Unit Name</th>
+                    <th>Part Group</th>
+                    <th>Part Family</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="listBody">
+                <tr><td colspan="5" class="empty-state">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/script.js"></script>
+<script src="/pages/part-code.js"></script>
+</body>
+</html>

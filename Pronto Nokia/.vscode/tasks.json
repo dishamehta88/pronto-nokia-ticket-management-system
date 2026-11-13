@@ -1,0 +1,7 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        { "label": "Install dependencies", "type": "shell", "command": "npm install", "problemMatcher": [] },
+        { "label": "Start Pronto server", "type": "shell", "command": "npm start", "problemMatcher": [], "isBackground": true }
+    ]
+}

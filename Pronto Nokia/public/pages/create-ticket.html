@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        
+        .ticket-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ticket-card h2 {
+            margin-bottom: 25px;
+            color: #1f2937;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .col {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+        
+        .btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        
+        #statusMessage {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div class="container">
+    <div class="ticket-card">
+
+        <h2>Create New Ticket</h2>
+
+        <form id="ticketForm">
+
+            <div class="row">
+                <div class="col"><div class="form-group">
+                    <label for="intimateDate">Received Date</label>
+                    <input type="date" id="intimateDate">
+                </div></div>
+                <div class="col"><div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country">
+                        <option value="">Select Country</option>
+                        <option>India</option>
+                        <option>Germany</option>
+                        <option>USA</option>
+                        <option>France</option>
+                        <option>Japan</option>
+                    </select>
+                </div></div>
+            </div>
+
+            <div class="form-group">
+                <label for="prontoNo">Pronto Number</label>
+                <input type="text" id="prontoNo" placeholder="Enter Pronto Number">
+            </div>
+
+            <div class="row">
+                <div class="col"><div class="form-group">
+                    <label for="partCode">Unit Part Code</label>
+                    <select id="partCode"><option value="">Loading...</option></select>
+                </div></div>
+                <div class="col"><div class="form-group">
+                    <label for="unitName">Unit Name</label>
+                    <input type="text" id="unitName" readonly>
+                </div></div>
+            </div>
+
+            <div class="row">
+                <div class="col"><div class="form-group">
+                    <label for="partGroup">Part Group</label>
+                    <input type="text" id="partGroup" readonly>
+                </div></div>
+                <div class="col"><div class="form-group">
+                    <label for="partFamily">Part Family</label>
+                    <input type="text" id="partFamily" readonly>
+                </div></div>
+            </div>
+
+            <div class="row">
+                <div class="col"><div class="form-group">
+                    <label for="unitVersion">Unit Version</label>
+                    <input type="text" id="unitVersion">
+                </div></div>
+                <div class="col"><div class="form-group">
+                    <label for="serialNumber">Unit Serial Number</label>
+                    <input type="text" id="serialNumber">
+                </div></div>
+            </div>
+
+            <div class="form-group">
+                <label for="faultDescription">Field Fault Description</label>
+                <textarea id="faultDescription" rows="5"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col"><div class="form-group">
+                    <label for="rcOwnerName">RC Owner</label>
+                    <input type="text" id="rcOwnerName" list="rcOwnerList" placeholder="Pick from the list or type a name" autocomplete="off">
+                    <datalist id="rcOwnerList"></datalist>
+                </div></div>
+                <div class="col"><div class="form-group">
+                    <label for="rdOwnerName">R&amp;D Owner</label>
+                    <input type="text" id="rdOwnerName" list="rdOwnerList" placeholder="Pick from the list or type a name" autocomplete="off">
+                    <datalist id="rdOwnerList"></datalist>
+                </div></div>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">Create Ticket</button>
+
+            <p id="statusMessage"></p>
+
+        </form>
+    </div>
+</div>
+
+<script src="/script.js"></script>
+<script src="/pages/create-ticket.js"></script>
+</body>
+</html>

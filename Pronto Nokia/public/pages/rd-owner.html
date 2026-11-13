@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&amp;D Owner</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/pages/pages.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div class="page-container">
+
+    <div class="page-card">
+        <h2>Add R&amp;D Owner</h2>
+        <form id="addForm" class="inline-form">
+            <input type="text" id="ownerName" placeholder="Name" required>
+            <input type="email" id="ownerEmail" placeholder="Email">
+            <button type="submit" class="btn">Add</button>
+        </form>
+        <p id="statusMessage"></p>
+    </div>
+
+    <div class="page-card">
+        <h2>All R&amp;D Owners</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="listBody">
+                <tr><td colspan="3" class="empty-state">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/script.js"></script>
+<script src="/pages/owner-shared.js" data-endpoint="rd-owners"></script>
+</body>
+</html>

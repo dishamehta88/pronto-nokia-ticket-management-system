@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/pages/pages.css">
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div class="page-container">
+
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="number" id="totalCount">-</div>
+            <div class="label">Total Tickets</div>
+        </div>
+        <div class="summary-card">
+            <div class="number" id="openCount">-</div>
+            <div class="label">Open Tickets</div>
+        </div>
+        <div class="summary-card">
+            <div class="number" id="closedCount">-</div>
+            <div class="label">Closed Tickets</div>
+        </div>
+    </div>
+
+    <div class="chart-grid">
+        <div class="page-card chart-card">
+            <div class="chart-card-header">
+                <h2>Tickets by Status</h2>
+                <span class="chart-caption">Live from the tickets database</span>
+            </div>
+            <div class="chart-panel">
+                <canvas id="statusChart"></canvas>
+                <div id="statusChartEmpty" class="empty-state" style="display:none;">No tickets available</div>
+            </div>
+        </div>
+
+        <div class="page-card chart-card">
+            <div class="chart-card-header">
+                <h2>Tickets Created</h2>
+                <div class="filters">
+                    <label class="filter-field"><span>Year</span><select id="yearSelect"></select></label>
+                    <label class="filter-field"><span>Month</span><select id="monthSelect"></select></label>
+                </div>
+            </div>
+            <div class="chart-panel">
+                <canvas id="barChart"></canvas>
+                <div id="barChartEmpty" class="empty-state" style="display:none;">No tickets available</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-card">
+        <h2>Recent Tickets</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pronto No</th>
+                    <th>Country</th>
+                    <th>Owner</th>
+                    <th>Status</th>
+                    <th>Received Date</th>
+                </tr>
+            </thead>
+            <tbody id="recentTicketsBody">
+                <tr><td colspan="5" class="empty-state">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/vendor/chartjs/chart.umd.js"></script>
+<script src="/script.js"></script>
+<script src="/pages/dashboard.js"></script>
+</body>
+</html>
